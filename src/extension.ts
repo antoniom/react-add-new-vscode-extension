@@ -11,17 +11,32 @@ export function activate(context: vscode.ExtensionContext) {
     'Congratulations, your extension "react-add-new-vscode-extension" is now active!'
   );
 
-  // The command has been defined in the package.json file
-  // Now provide the implementation of the command with registerCommand
-  // The commandId parameter must match the command field in package.json
-  const disposable = vscode.commands.registerCommand(
-    'react-add-new-vscode-extension.helloWorld',
-    () => {
-      vscode.window.showInformationMessage(`Your component is ready`);
-    }
+  context.subscriptions.push(
+    vscode.commands.registerCommand(
+      'react-add-new-vscode-extension.newComponentWithStyles',
+      () => {
+        vscode.window.showInformationMessage(`New component with styles`);
+      }
+    )
   );
 
-  context.subscriptions.push(disposable);
+  context.subscriptions.push(
+    vscode.commands.registerCommand(
+      'react-add-new-vscode-extension.newComponent',
+      () => {
+        vscode.window.showInformationMessage(`New component`);
+      }
+    )
+  );
+
+  context.subscriptions.push(
+    vscode.commands.registerCommand(
+      'react-add-new-vscode-extension.newContext',
+      () => {
+        vscode.window.showInformationMessage(`New context`);
+      }
+    )
+  );
 }
 
 // This method is called when your extension is deactivated

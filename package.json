@@ -14,8 +14,58 @@
   "contributes": {
     "commands": [
       {
-        "command": "react-add-new-vscode-extension.helloWorld",
-        "title": "Hello World"
+        "command": "react-add-new-vscode-extension.newComponentWithStyles",
+        "title": "Component with Styles..."
+      },
+      {
+        "command": "react-add-new-vscode-extension.newComponent",
+        "title": "Component..."
+      },
+      {
+        "command": "react-add-new-vscode-extension.newContext",
+        "title": "Context..."
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "react-add-new-vscode-extension.newComponentWithStyles",
+          "when": "false"
+        },
+        {
+          "command": "react-add-new-vscode-extension.newComponent",
+          "when": "false"
+        },
+        {
+          "command": "react-add-new-vscode-extension.newContext",
+          "when": "false"
+        }
+      ],
+      "explorer/context": [
+        {
+          "submenu": "react-add-new-vscode-extension.addNewReact",
+          "when": "explorerResourceIsFolder"
+        }
+      ],
+      "react-add-new-vscode-extension.addNewReact": [
+        {
+          "command": "react-add-new-vscode-extension.newComponentWithStyles",
+          "group": "react-add-new@10"
+        },
+        {
+          "command": "react-add-new-vscode-extension.newComponent",
+          "group": "react-add-new@20"
+        },
+        {
+          "command": "react-add-new-vscode-extension.newContext",
+          "group": "react-add-new@30"
+        }
+      ]
+    },
+    "submenus": [
+      {
+        "id": "react-add-new-vscode-extension.addNewReact",
+        "label": "Add new React"
       }
     ]
   },
